@@ -1,0 +1,32 @@
+# A GitHub Actions workflow that installs ov from the core release and uses a service account.
+# Copy it to .github/workflows/ in your repository and add the token as the secret
+# OPENVIREO_SERVICE_ACCOUNT_TOKEN. (The OpenVireo GitHub Action does the same in one step:
+# https://developer.openvireo.com/cli/github-action/)
+name: deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      OPENVIREO_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OPENVIREO_SERVICE_ACCOUNT_TOKEN }}
+      OV_VERSION: 1.0.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ov
+        run: |
+          base=https://github.com/openvireo/openvireo-core/releases/download/v$OV_VERSION
+          curl -fsSLO "$base/ov-$OV_VERSION-linux-x64.tar.gz"
+          curl -fsSLO "$base/SHA256SUMS"
+          sha256sum --ignore-missing -c SHA256SUMS
+          tar -xzf "ov-$OV_VERSION-linux-x64.tar.gz"
+          sudo install "ov-$OV_VERSION-linux-x64/ov" /usr/local/bin/
+      - name: Write the config
+        run: ov inject -i config.yml.tpl -o config.yml
+      - name: Deploy
+        run: ov run --env-file .env.tpl -- ./deploy.sh   # resolved values are masked in the output
