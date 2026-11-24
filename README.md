@@ -5,7 +5,7 @@ command line for reading, injecting and rotating secrets from scripts and CI. On
 [developer.openvireo.com](https://developer.openvireo.com) that has an **ov CLI** tab, plus templates
 and a GitHub Actions workflow for CI.
 
-Examples in other languages: [TypeScript](https://github.com/openvireo/openvireo-examples-typescript) · [Python](https://github.com/openvireo/openvireo-examples-python) · [Kotlin](https://github.com/openvireo/openvireo-examples-kotlin) · [Java](https://github.com/openvireo/openvireo-examples-java) · [Swift](https://github.com/openvireo/openvireo-examples-swift) · [C++](https://github.com/openvireo/openvireo-examples-cpp)
+Examples in other languages: [TypeScript](https://github.com/openvireo/openvireo-examples-typescript) · [Rust](https://github.com/openvireo/openvireo-examples-rust) · [Python](https://github.com/openvireo/openvireo-examples-python) · [Kotlin](https://github.com/openvireo/openvireo-examples-kotlin) · [Java](https://github.com/openvireo/openvireo-examples-java) · [Swift](https://github.com/openvireo/openvireo-examples-swift) · [C++](https://github.com/openvireo/openvireo-examples-cpp)
 
 ## Install ov
 
