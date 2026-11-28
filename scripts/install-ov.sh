@@ -1,9 +1,9 @@
 #!/bin/sh
 # Installs ov from the core's GitHub release into ./bin (or $1), after checking it against SHA256SUMS.
 #   scripts/install-ov.sh            # ./bin/ov
-#   OV_VERSION=1.1.0 scripts/install-ov.sh /usr/local/bin
+#   OV_VERSION=1.2.2 scripts/install-ov.sh /usr/local/bin
 set -eu
-version=${OV_VERSION:-1.1.0}
+version=${OV_VERSION:-1.2.2}
 dest=${1:-bin}
 case "$(uname -s)-$(uname -m)" in
   Darwin-arm64) platform=darwin-arm64 ;;

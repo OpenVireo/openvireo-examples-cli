@@ -9,7 +9,7 @@ Examples in other languages: [TypeScript](https://github.com/openvireo/openvireo
 
 ## Install ov
 
-`ov` is a single signed binary on the [core release](https://github.com/openvireo/openvireo-core/releases/tag/v1.1.0)
+`ov` is a single signed binary on the [core release](https://github.com/openvireo/openvireo-core/releases/tag/v1.2.2)
 (macOS binaries are notarized, the Windows one is signed). `scripts/install-ov.sh` downloads the one for
 your machine, checks it against `SHA256SUMS` and installs it:
 
